@@ -1,0 +1,80 @@
+{
+    "MAIN": [
+        {"type": "say", "speaker": "ファシリテータ", "text": "みなさん、よろしくお願いします。早速ですが、私がファシリテーターをやらせてもらいますね"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "では、私はタイムキーパをやります。飯尾さんは最後に今回の議論をまとめていただけますか？"},
+        {"type": "wait",  "branch": "CONFIRM_USER_ROLE"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "今回のテーマは「本屋の売り上げを伸ばすための施策の提案」ですね。"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "まず、前提条件の確認から始めていきたいと思います。"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "どこにある本屋さんがいいと思いますか？"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "都心の方が人が多いので、後で施策とかが考えやすそうだと思います"},
+        {"type": "wait",  "branch": "DISCUSS_TARGET_PLACE"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "そうですね、首都ですし、東京にしましょう"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "ターゲットによって具体的な場所も異なると思いますが、どうしましょうか。"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "そうですね、サラリーマン・高齢者・若者などが考えられますよね。"},
+        {"type": "wait",  "branch": "DISCUSS_TARGET_AGE"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "そうですね、若者が多いメージがある渋谷にしましょうか"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "渋谷にある本屋で、若者に向けた施策を考えましょう。"},
+        {"type": "say", "speaker": "ファシリテータ", "text": "先に目標を決めたいのですが、売り上げ1.5倍でどうでしょうか？"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "目標はそれでいいと思います。"},
+        {"type": "say", "speaker": "タイムキーパー", "text": "5分ほどたったので、そろそろ具体的な施策案に移った方が良いと思います。"}
+    ],
+    "CONFIRM_USER_ROLE": [
+        {
+            "pattern": "分かりました",
+            "dialog": [
+                {"type": "say", "speaker": "タイムキーパー", "text": "どうもありがとうございます"},
+                {"type": "say", "speaker": "タイムキーパー", "text": "よろしくお願いします。"}
+            ]
+        },
+        {
+            "pattern": "嫌です",
+            "dialog": [
+                {"type": "say", "speaker": "タイムキーパー", "text": "では、私がまとめもします。"},
+                {"type": "say", "speaker": "タイムキーパー", "text": "飯尾さんはアイデアだしをお願いします。"}
+            ]
+        },
+        {
+            "pattern": "*",
+            "dialog": [
+                {"type": "say", "speaker": "ファシリテータ", "text": "まぁ、いい感じにやるということで、始めましょうか。"}
+            ]
+        }
+    ],
+    "DISCUSS_TARGET_PLACE": [
+        {
+            "pattern": "田舎",
+            "dialog": [
+                {"type": "say", "speaker": "ファシリテータ", "text": "確かに、田舎もいいですね。"},
+                {"type": "say", "speaker": "ファシリテータ", "text": "ですが、都会の方がターゲットの多様性はでそうですよね。"}
+            ]
+        },
+        {
+            "pattern": "*",
+            "dialog": [
+                {"type": "say", "speaker": "ファシリテータ", "text": "色々な考え方がありそうですが、今回は都会で考えてみましょうか。"}
+            ]
+        }
+    ],
+    "DISCUSS_TARGET_AGE": [
+        {
+            "pattern": "高齢者",
+            "dialog": [
+                {"type": "say", "speaker": "タイムキーパー", "text": "高齢者もいいですが、東京となると若者メインで考えるのもいいかなと思います。"},
+                {"type": "say", "speaker": "ファシリテータ", "text": "高齢者よりも若者のほうが本離れは深刻な感じがしますね。"}
+            ]
+        },
+        {
+            "pattern": "若者",
+            "dialog": [
+                {"type": "say", "speaker": "ファシリテータ", "text": "若者がターゲットですね。いいと思います。"}
+            ]
+        },
+        {
+            "pattern": "*",
+            "dialog": [
+                {"type": "say", "speaker": "ファシリテータ", "text": "今回は都会の若者で行くのはどうでしょうか。"}
+            ]
+        }
+    ]
+}
+
